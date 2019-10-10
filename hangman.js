@@ -55,12 +55,3 @@ guessesEl.textContent = `remaining guesses: ${game1.remainingGuesses}`
 gameDiv.appendChild(guessesEl).appendChild(wordEl)
 
 
-window.addEventListener("keydown", (e) => {
-    if(e.code.includes("Key")){
-        game1.makeGuess(e.key)
-        guessesEl.textContent = `remaining guesses: ${game1.remainingGuesses}`
-        wordEl.textContent = game1.getPuzzle()
-        gameDiv.appendChild(guessesEl).appendChild(wordEl)
-
-    }
-})
