@@ -1,4 +1,4 @@
-const game1 = new HangmanClass("cat", 5)
+const game1 = new HangmanClass("car parts", 5)
 game1.gameStats()
 gameDiv.append(guessesEl, wordEl, statusEl)
 
@@ -13,3 +13,6 @@ window.addEventListener("keydown", (e) => {
     gameDiv.append(guessesEl, wordEl, statusEl)
 })
 
+const puzzle = getPuzzle()
+
+console.log(puzzle)
