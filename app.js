@@ -13,15 +13,10 @@ window.addEventListener("keydown", (e) => {
     gameDiv.append(guessesEl, wordEl, statusEl)
 })
 
-// async callback 
-getPuzzle((error, puzzle) => {
-    if(error){
-        console.log(`Error: ${error}`)
-    } else {
-        console.log(puzzle)
-
-    }
-
+getPuzzle('2').then((puzzle) => {
+    console.log(puzzle)
+}).catch((err) => {
+    console.log(err)
 })
 
 
