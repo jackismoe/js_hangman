@@ -9,5 +9,3 @@ const getPuzzle = (wordCount) => {
         return data.puzzle
     })
 }
-
-
