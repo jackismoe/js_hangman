@@ -1,24 +1,31 @@
-const game1 = new HangmanClass("car parts", 5)
-game1.gameStats()
-gameDiv.append(guessesEl, wordEl, statusEl)
+let game = null;
 
-game1.getStatus
-game1.displayMessage()
+const startGame = async() => {
+    const puzzle = await getPuzzle("2")
+    game = new HangmanClass(puzzle, 5)
+    render();
+}
+
+const render = () => {
+    game.gameStats()
+    gameDiv.append(guessesEl, wordEl, statusEl)
+    game.getStatus
+    game.displayMessage() 
+}
+
+
+
 window.addEventListener("keydown", (e) => {
     if(e.code.includes("Key")){
-        game1.makeGuess(e.key)   
+        game.makeGuess(e.key)   
     }
-    wordEl.textContent = game1.getPuzzle
-    guessesEl.textContent = `remaining guesses: ${game1.remainingGuesses}`
-    gameDiv.append(guessesEl, wordEl, statusEl)
+    render()
 })
 
-getPuzzle('2').then((puzzle) => {
-    console.log(puzzle)
-}).catch((err) => {
-    console.log(err)
-})
+document.querySelector("#reset").addEventListener('click', () => {
+startGame()
+} )
+    
 
-
-
+startGame()
 
