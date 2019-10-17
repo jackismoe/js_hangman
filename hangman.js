@@ -58,7 +58,7 @@ class HangmanClass {
 
     displayMessage = function () {
         if(this.status === "finished") {
-            statusEl.textContent = `Great Job! Y ou guessed the word!`
+            statusEl.textContent = `Great Job! You guessed the word!`
         } else if (this.status === 'failed') {
             statusEl.textContent = `You Lost! The word was ${this.word.join("")}`
         } else {
