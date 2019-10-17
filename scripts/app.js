@@ -8,7 +8,7 @@ const startGame = async() => {
 
 const render = () => {
     game.gameStats()
-    gameDiv.append(guessesEl, wordEl, statusEl)
+    gameDiv.prepend(statusEl, wordEl, guessesEl)
     game.getStatus
     game.displayMessage() 
 }
@@ -17,14 +17,14 @@ const render = () => {
 
 window.addEventListener("keydown", (e) => {
     if(e.code.includes("Key")){
-        game.makeGuess(e.key)   
+        game.makeGuess(e.key) 
     }
     render()
 })
 
 document.querySelector("#reset").addEventListener('click', () => {
 startGame()
-} )
+})
     
 
 startGame()

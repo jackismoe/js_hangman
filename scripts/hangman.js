@@ -7,7 +7,11 @@ class HangmanClass {
     }
 
     gameStats = function () {
-        wordEl.textContent = this.getPuzzle
+        const spanWord = this.getPuzzle.split("")
+        wordEl.innerHTML = ""
+        spanWord.forEach((letter) => {
+            wordEl.innerHTML += `<span>${letter}</span>`
+        })
         guessesEl.textContent = `remaining guesses: ${this.remainingGuesses}`
     }
 
@@ -73,6 +77,7 @@ const gameDiv = document.querySelector("#game-wrapper")
 
 const wordEl = document.createElement("div")
 wordEl.id = "word"
+wordEl.className = "puzzle"
 
 
 const guessesEl = document.createElement("p")
